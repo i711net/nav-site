@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Worker 名称：会成为默认域名 <name>.<你的子域>.workers.dev 的一部分
+  // 如果通过 Cloudflare 控制台的 Git 集成部署，这个名称必须和控制台里的 Worker 名称一致
+  "name": "nav-site",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-14",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // KV 命名空间绑定：用于存储分类和链接数据
+  // 运行 `npx wrangler kv namespace create NAV_DB` 后，把返回的 id 填到下面
+  "kv_namespaces": [
+    {
+      "binding": "NAV_DB",
+      "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+    }
+  ],
+
+  // 非敏感环境变量放这里；敏感的 ADMIN_PASSWORD / SESSION_SECRET
+  // 请用 `wrangler secret put` 设置，不要写在这个文件里
+  "vars": {}
+}

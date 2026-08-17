@@ -1,0 +1,19 @@
+{
+  "name": "nav-site-cf",
+  "version": "1.0.0",
+  "description": "个人常用网址导航站（Cloudflare Workers 版，带管理后台）",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "dependencies": {
+    "hono": "^4.6.14"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
